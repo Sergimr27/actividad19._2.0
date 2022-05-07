@@ -16,7 +16,7 @@
         $pwd = $_POST['pwd'];
         $correo = $_POST['correo'];
 
-        $sql = "INSERT INTO `tbl_usuario` (`nombre_usuario`, `password`, `e-mail`) VALUES ('$usu', $pwd, '$correo');";
+        $sql = "INSERT INTO `tbl_usuario` (`nombre_usuario`, `password`, `email`) VALUES ('$usu', $pwd, '$correo');";
         mysqli_query($conexion, $sql);
 
     ?>

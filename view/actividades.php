@@ -35,8 +35,21 @@
                 </ul>
                 <form class="d-flex">
                     <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-                    <button class="btn btn-light form-control me-1" type="submit"><i
-                            class="fa-solid fa-arrow-up-from-bracket"></i></button>
+                    <?php
+                    session_start();
+                    if (isset($_SESSION['name'])) {
+                        ?>
+                         <a href="./subiractividades.html"> <button class="btn btn-light form-control me-1" type="button"><i
+                            class="fa-solid fa-arrow-up-from-bracket"></i></button></a>
+                            <?php
+                    }else {
+                        ?>
+                        <a href="./login.html"> <button class="btn btn-light form-control me-1" type="button"><i
+                        class="fa-solid fa-arrow-up-from-bracket"></i></button></a>
+                        <?php
+                    }
+                    ?>
+                   
                     <a href="./login.html"> <button class="btn btn-light form-control ms-1" type="button">Acceder</button></a>
                 </form>
             </div>
@@ -77,49 +90,49 @@
             <img src="../img/eva-gour-94mm2Txn12s-unsplash.jpg" alt="" class="target">
             <div style="float: right;" class="padding-m">
                 <button class="btn btn-light m-1" type="submit"><i class="fa-solid fa-link"></i></button>
-                <button class="btn btn-light m-1" type="submit"><i class="fa-solid fa-heart"></i></button>
+                <a href="./login.html"> <button class="btn btn-light m-1" type="submit"><i class="fa-solid fa-heart"></i></button></a>
             </div>
         </div>
         <div class="column-3 padding-mobile">
             <img src="../img/dan-cristian-padure-QQkQcaz7qmY-unsplash.jpg" alt="" class="target">
             <div style="float: right;" class="padding-m">
                 <button class="btn btn-light m-1" type="submit"><i class="fa-solid fa-link"></i></button>
-                <button class="btn btn-light m-1" type="submit"><i class="fa-solid fa-heart"></i></button>
+                <a href="./login.html"> <button class="btn btn-light m-1" type="submit"><i class="fa-solid fa-heart"></i></button></a>
             </div>
         </div>
         <div class="column-3 padding-mobile">
             <img src="../img/etienne-girardet-j2Soo4TfFMk-unsplash.jpg" alt="" class="target">
             <div style="float: right;" class="padding-m">
                 <button class="btn btn-light m-1" type="submit"><i class="fa-solid fa-link"></i></button>
-                <button class="btn btn-light m-1" type="submit"><i class="fa-solid fa-heart"></i></button>
+                <a href="./login.html"> <button class="btn btn-light m-1" type="submit"><i class="fa-solid fa-heart"></i></button></a>
             </div>
         </div>
         <div class="column-3 padding-mobile">
             <img src="../img/lucas-hoang-mwfBszKf5Xw-unsplash.jpg" alt="" class="target">
             <div style="float: right;" class="padding-m">
                 <button class="btn btn-light m-1" type="submit"><i class="fa-solid fa-link"></i></button>
-                <button class="btn btn-light m-1" type="submit"><i class="fa-solid fa-heart"></i></button>
+                <a href="./login.html"> <button class="btn btn-light m-1" type="submit"><i class="fa-solid fa-heart"></i></button></a>
             </div>
         </div>
         <div class="column-3 padding-mobile">
             <img src="../img/mathilde-langevin-tbzSgZbEuz4-unsplash.jpg" alt="" class="target">
             <div style="float: right;" class="padding-m">
                 <button class="btn btn-light m-1" type="submit"><i class="fa-solid fa-link"></i></button>
-                <button class="btn btn-light m-1" type="submit"><i class="fa-solid fa-heart"></i></button>
+                <a href="./login.html"> <button class="btn btn-light m-1" type="submit"><i class="fa-solid fa-heart"></i></button></a>
             </div>
         </div>
         <div class="column-3 padding-mobile">
             <img src="../img/nick-fewings-EkyuhD7uwSM-unsplash.jpg" alt="" class="target">
             <div style="float: right;" class="padding-m">
                 <button class="btn btn-light m-1" type="submit"><i class="fa-solid fa-link"></i></button>
-                <button class="btn btn-light m-1" type="submit"><i class="fa-solid fa-heart"></i></button>
+                <a href="./login.html"> <button class="btn btn-light m-1" type="submit"><i class="fa-solid fa-heart"></i></button></a>
             </div>
         </div>
         <div class="column-3 padding-mobile">
             <img src="../img/susanna-marsiglia-Yjr6EafseQ8-unsplash.jpg" alt="" class="target">
             <div style="float: right;" class="padding-m">
                 <button class="btn btn-light m-1" type="submit"><i class="fa-solid fa-link"></i></button>
-                <button class="btn btn-light m-1" type="submit"><i class="fa-solid fa-heart"></i></button>
+                <a href="./login.html"> <button class="btn btn-light m-1" type="submit"><i class="fa-solid fa-heart"></i></button></a>
             </div>
         </div>
     </div>

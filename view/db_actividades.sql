@@ -63,7 +63,7 @@ CREATE TABLE `tbl_usuario` (
   `id_usuario` int(11) NOT NULL,
   `nombre_usuario` varchar(30) NOT NULL,
   `password` varchar(8) NOT NULL,
-  `e-mail` varchar(50) NOT NULL
+  `email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
