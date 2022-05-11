@@ -37,7 +37,7 @@
                 })
         }
 
-        aviso('../index.html');
+        aviso('../index.php');
     </script>
 
 </body>

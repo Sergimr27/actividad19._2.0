@@ -19,7 +19,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../index.html">#AppName</a>
+            <a class="navbar-brand" href="../index.php">#AppName</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -32,12 +32,47 @@
                     <li class="nav-item">
                         <a class="nav-link" href="./actividades.php">Actividades</a>
                     </li>
+                    <?php
+                    session_start();
+                    if (isset($_SESSION['correo'])) {
+                        ?>
+                        <li>
+                        <a class="nav-link" href="./misactividades.php">MisActividades</a>
+                        </li>
+                      
+                        <?php
+                    }
+                ?>
                 </ul>
                 <form class="d-flex">
-                    <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-                    <a href="./login.html"><button class="btn btn-light form-control me-1" type="button"><i
+                <?php
+                    session_start();
+                    if (isset($_SESSION['correo'])) {
+                        ?>
+                         <a href="./subiractividades.html"> <button class="btn btn-light form-control me-1" type="button"><i
                             class="fa-solid fa-arrow-up-from-bracket"></i></button></a>
-                    <a href="./login.html"><button class="btn btn-light form-control ms-1" type="button">Acceder</button></a>
+                            <?php
+                    }else {
+                        ?>
+                        <a href="./login.html"> <button class="btn btn-light form-control me-1" type="button"><i
+                        class="fa-solid fa-arrow-up-from-bracket"></i></button></a>
+                        <?php
+                    }
+                    ?>
+                   
+                   <?php
+
+            
+if (isset($_SESSION['correo'])) {
+    ?>
+  <a href="./logout.php"> <button class="btn btn-light form-control ms-1" type="button">Logout</button></a>
+        <?php
+}else {
+    ?>
+   <a href="./login.php"> <button class="btn btn-light form-control ms-1" type="button">acceder</button></a>
+    <?php
+}
+?>
                 </form>
             </div>
         </div>
@@ -68,29 +103,30 @@
     </div>
 
     <!-- Random de actividades -->
-
     <div class="row-c padding-m">
-        <div class="column-1 padding-m">
-            <h5>Subidas recientemente</h5>
-        </div>
-
+        <h4 class="column-1 padding-m">Subidas Recientemente</h4>
+        
         <div class="column-1 padding-s">
+            <div class="column-5 padding-s">
+                <img src="..\img\5029cc19b1b0b10a3a545485a0289.jpg" alt="" class="target-s">
+            </div>
+            <div class="column-5 padding-s">
+                <img src="..\img\5029cc19b1b0b10a3a545485a0289.jpg" alt="" class="target-s">
+            </div>
+            <div class="column-5 padding-s">
+                <img src="..\img\5029cc19b1b0b10a3a545485a0289.jpg" alt="" class="target-s">
+            </div>
+            <div class="column-5 padding-s">
+                <img src="..\img\5029cc19b1b0b10a3a545485a0289.jpg" alt="" class="target-s">
+            </div>
+            <div class="column-5 padding-s">
+                <img src="..\img\5029cc19b1b0b10a3a545485a0289.jpg" alt="" class="target-s">
+            </div>
 
-            <div class="column-4 padding-s">
-                <img src="../img/kelly-sikkema-TS6FasMlQWs-unsplash.jpg" alt="" class="target-s">
-            </div>
-            <div class="column-4 padding-s">
-                <img src="../img/etienne-girardet-j2Soo4TfFMk-unsplash.jpg" alt="" class="target-s">
-            </div>
-
-            <div class="column-4 padding-s">
-                <img src="../img/nick-fewings-EkyuhD7uwSM-unsplash.jpg" alt="" class="target-s">
-            </div>
-            <div class="column-4 padding-s">
-                <img src="../img/keila-hotzel-lFmuWU0tv4M-unsplash.jpg" alt="" class="target-s">
-            </div>
         </div>
+
     </div>
+    
 
 </body>
 

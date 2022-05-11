@@ -7,24 +7,39 @@
     <title>Document</title>
 </head>
 <body>
+    
 <?php
-if (isset($_POST['Inicio'])) {
-    if (isset($_POST['correo']) && isset($_POST['pwd']) ) {
-        $email = $_POST['correo'];
-        $contra = $_POST['pwd'];
-        $sql="Select * from tbl_usuario where email = '{$email}' and password = '{$contra}';" ;
-        $conexion = mysqli_connect('localhost', 'root', '', 'db_actividades');
-        $result = mysqli_query($conexion, $sql);
-        $num = mysqli_num_rows($result);
-        if($num==1){
-            session_start();
-            $_SESSION['correo']= $email;
+
+    session_start();
+    
+    $descripcion = $_POST['descripcion'];
+    $foto = $_FILES['foto'];
+    $autor= $_POST['autor'];
+    $topics= $_POST['topics'];
+    $titulo = $_POST['titulo'];
+
+
+    $path="/www/M4/actividad19/img";
+
+    $destino=$_SERVER['DOCUMENT_ROOT'].$path.'/'.$foto['name']; 
+   
+   
+  /*   $sql = "INSERT INTO `tbl_actividad` (`fecha`, `descripcion`, `imagen`,`tiempo`,`autor`,`topics`,`titulo`) VALUES ('$fecha', $descripcion, '$foto','$time','$autor','$topics');";
+    mysqli_query($conexion, $sql); */
+  
+    if(($foto['size']<1000*1024) && ($foto['type']=="image/jpeg" || $foto['type']=="image/png" || $foto['type']=="image/gif")) {
+        $exito=move_uploaded_file($foto['tmp_name'], $destino );
+        if ($exito) {
+            $destino=$foto['name'];
+            $conexion = mysqli_connect('localhost', 'root', '', 'db_actividades');
+            $sql = "INSERT INTO `tbl_actividad` (`descripcion`, `imagen`,`autor`,`topics`,`titulo`) VALUES ( '$descripcion', '$destino','$autor','$topics','$titulo')";
+            $insert=mysqli_query($conexion, $sql);
             ?>
             <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
             <script>
                 function aviso(url) {
                     Swal.fire({
-                            title: 'Usuario Correcto',
+                            title: 'Archivo Subido',
                             icon: 'success',
                             confirmButtonColor: '#3085d6',
                             confirmButtonText: 'Volver'
@@ -36,17 +51,17 @@ if (isset($_POST['Inicio'])) {
                         })
                 }
 
-                aviso('../view/actividades.php');
+                aviso('./actividades.php');
             </script>
-            <?php 
-            //header("Location:index1.php");
-        }else {
+            <?php
+            }
+        else {
             ?>
             <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
             <script>
                 function aviso(url) {
                     Swal.fire({
-                            title: 'Usuario Incorrecto',
+                            title: '¡El archivo es demasiado grande!',
                             icon: 'error',
                             confirmButtonColor: '#3085d6',
                             confirmButtonText: 'Volver'
@@ -57,16 +72,16 @@ if (isset($_POST['Inicio'])) {
                             }
                         })
                 }
-
-                aviso('./login.html');
+        
+                aviso('./subiractividades.html');
             </script>
             <?php
         }
-    }else {
-        echo "Introduzca su correo y su contraseña";
-    }
-   
-}
-?>  
-</body>
-</html>
+      }
+
+
+
+?>
+
+
+

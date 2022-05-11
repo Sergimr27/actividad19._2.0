@@ -1,37 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Subir Archivos</title>
+    <link rel="stylesheet" type="text/css" href="../css/view.css" media="all">
+    <script type="text/javascript" src="view.js"></script>
+    <script type="text/javascript" src="calendar.js"></script>
 </head>
 
-<body>
-    <h2><b>Subir Archivos</b></h2>
-    <form action="subiractividades.php" method="post">
-        <input type="date" name="fecha" placeholder="Fecha">
-        <br>
-        <br>
-        <input type="text" name="descripcion" placeholder=" Descripcion">
-        <br>
-        <br>
-        <input type="file" name="imagen" placeholder="Imagen">
-        <br>
-        <br>
-        <input type="time" name="tiempo" placeholder="Tiempo">
-        <br>
-        <br>
-        <input type="text" name="autor" placeholder="Autor">
-        <br>
-        <br>
-        <input type="text" name="topics" placeholder="Topics">
-        <br>
-        <br>
-        <input type="submit" name="Subir Archivo">
-    </form>
+<body id="main_body">
 
+    <img id="top" src="top.png" alt="">
+    <div id="form_container">
+
+        <h1><a>Subir Archivos</a></h1>
+        <form action="subirarchivos.php" id="form_39597" class="appnitro" enctype="multipart/form-data" method="post" action="">
+            <div class="form_description">
+                <h2>Subir Archivos</h2>
+
+            </div>
+            <ul>
+                <li id="li_1">
+                    <b>Titulo</b>
+                    <br>
+                    <input type="text" name="titulo">
+
+                </li>
+                <li id="li_2">
+                    <b>Descripción </b>
+                    <div>
+                        <input id="element_2" name="descripcion" class="element text medium" type="text" value="" />
+                    </div>
+                </li>
+                <li id="li_3">
+                    <b> Imagen</b>
+                    <div>
+                        <input id="element_3" name="foto" class="element file" type="file" />
+                    </div>
+                </li>
+                <li id="li_4">
+                    <b>Autor</b>
+                    <div>
+                        <input id="element_4" name="autor" class="element text medium" type="text" value="" />
+                    </div>
+                </li>
+                <li id="li_5">
+                    <b>Topics</b>
+                    <br>
+                    <div>
+                        <input id="element_5" name="topics" class="element text medium" type="text" value="" />
+                    </div>
+                </li>
+
+                <li class="buttons">
+                    <input type="hidden" name="form_id" value="39597" />
+
+                    <input id="saveForm" class="button_text" type="submit" name="subir" value="Aceptar" />
+                </li>
+            </ul>
+        </form>
+
+    </div>
+    <img id="bottom" src="bottom.png" alt="">
 </body>
 
 </html>
